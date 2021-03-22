@@ -1,0 +1,22 @@
+{
+  "name": "git-issues-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Nidday Mark",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "octonode": "^0.10.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": ""
+}
