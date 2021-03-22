@@ -6,9 +6,9 @@ const github = require('octonode')
 const cors = require('cors');
 const app = express()
 
-// app.use(cors({
-//     origin: 'https://mkniddaygitissues.herokuapp.com'
-// }))
+app.use(cors({
+    origin: 'https://mkniddaygitissues.herokuapp.com'
+}))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
