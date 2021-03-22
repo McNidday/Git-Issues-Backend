@@ -6,9 +6,9 @@ const github = require('octonode')
 const cors = require('cors');
 const app = express()
 
-app.use(cors({
-    origin: 'https://mkniddaygitissues.herokuapp.com'
-}))
+// app.use(cors({
+//     origin: 'https://mkniddaygitissues.herokuapp.com'
+// }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
@@ -106,7 +106,7 @@ app.post('/search/issues', function (req, res, next) {
 })
 
 app.use((error, req, res, next) => {
-    // console.log(error)
+    console.log(error)
     if (error && error.statusCode) {
         res.status(error.statusCode).json(error.message)
     } else {
