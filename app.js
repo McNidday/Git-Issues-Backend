@@ -47,15 +47,12 @@ app.get('/user/login', function (req, res, next) {
     const code = req.query.code
     github.auth.login(code, function (err, token) {
         if (err) {
+            console.log(err)
             return next(err)
         } else {
-            const options = {
-                maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-            }
-            res.cookie('access_token', token, options)
             res.status(200).json(token)
         }
-    })
+    });
 })
 
 app.get('/user/info', function (req, res, next) {
@@ -109,7 +106,7 @@ app.post('/search/issues', function (req, res, next) {
 })
 
 app.use((error, req, res, next) => {
-    console.log(error)
+    // console.log(error)
     if (error && error.statusCode) {
         res.status(error.statusCode).json(error.message)
     } else {
